@@ -1,40 +1,69 @@
-# Jupyter Notebook Documentation
+# Import turtle package 
+import turtle 
 
-Welcome to the **Jupyter Notebook** documentation site. **Jupyter Notebook**
-is a simplified notebook authoring application, and is a part of [Project
-Jupyter](https://docs.jupyter.org/en/latest/), a large umbrella project
-centered around the goal of providing tools (and [standards](https://docs.jupyter.org/en/latest/#sub-project-documentation))
-for interactive computing with [computational notebooks](https://docs.jupyter.org/en/latest/#what-is-a-notebook).
+# Creating a turtle object(pen) 
+pen = turtle.Turtle() 
 
-A [computational notebook](https://docs.jupyter.org/en/latest/#what-is-a-notebook)
-is a shareable document that combines computer
-code, plain language descriptions, data, rich visualizations like 3D models,
-charts, graphs and figures, and interactive controls. A notebook, along with
-an editor like **Jupyter Notebook**, provides a fast interactive environment for
-prototyping and explaining code, exploring and visualizing data, and sharing
-ideas with others.
+# Defining a method to draw curve 
+def curve(): 
+	for i in range(200): 
 
-**Jupyter Notebook** is a sibling to other notebook authoring applications under
-the Project Jupyter umbrella, like [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/)
-and [Jupyter Desktop](https://github.com/jupyterlab/jupyterlab-desktop).
-Jupyter Notebook offers a lightweight, simplified experience compared to JupyterLab.
+		# Defining step by step curve motion 
+		pen.right(1) 
+		pen.forward(1) 
 
-Read more about how to use **Jupyter Notebook** on this site, in the [User
-Documentation](notebook.md).
+# Defining method to draw a full heart 
+def heart(): 
 
-```{image} ./_static/images/notebook-running-code.png
+	# Set the fill color to red 
+	pen.fillcolor('red') 
 
-```
+	# Start filling the color 
+	pen.begin_fill() 
 
-- [Installation](https://jupyter.readthedocs.io/en/latest/install.html)
-- [Starting the Notebook](https://jupyter.readthedocs.io/en/latest/running.html)
+	# Draw the left line 
+	pen.left(140) 
+	pen.forward(113) 
 
-```{toctree}
-:maxdepth: 2
+	# Draw the left curve 
+	curve() 
+	pen.left(120) 
 
-user-documentation
-configuration
-migrate_to_notebook7
-contributor
-changelog
-```
+	# Draw the right curve 
+	curve() 
+
+	# Draw the right line 
+	pen.forward(112) 
+
+	# Ending the filling of the color 
+	pen.end_fill() 
+
+# Defining method to write text 
+def txt(): 
+
+	# Move turtle to air 
+	pen.up() 
+
+	# Move turtle to a given position 
+	pen.setpos(-68, 95) 
+
+	# Move the turtle to the ground 
+	pen.down() 
+
+	# Set the text color to lightgreen 
+	pen.color('lightgreen') 
+
+	# Write the specified text in 
+	# specified font style and size 
+	pen.write("rohit", font=( 
+	"Verdana", 12, "bold")) 
+
+
+# Draw a heart 
+heart() 
+
+# Write text 
+txt() 
+
+# To hide turtle 
+pen.ht() 
